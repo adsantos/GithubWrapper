@@ -19,7 +19,7 @@
 
 // Run at start of all tests in the class
 - (void)setUp {
-    Credential *credential = [[Credential alloc] initWithUsername:@"user" andPassword:@"password"];
+    Credential *credential = [[Credential alloc] initWithUsername:@"github-objc" andPassword:@"passw0rd"];
     self.api = [[RestAPI alloc] initWithCredential:credential];
 }
 
@@ -27,7 +27,7 @@
     
     __block int errorCode = -1;
     [self prepare];
-    [self.api getAllReposForUser:@"carvil" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+    [self.api getAllReposForUser:@"github-objc" withReposPerPage:1 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
         if (isFinished) {
             [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
         }
@@ -40,6 +40,25 @@
     // Wait for block to finish or timeout, before doing assertions
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:60.0];
     GHAssertTrue(errorCode == -1, @"The request should had succeeded, unless there was a network connection problem or the username/password was invalid.");
+}
+
+-(void)testGetAllReposForUserWithInvalidPerPage {
+    
+    __block int errorCode = -1;
+    [self prepare];
+    [self.api getAllReposForUser:@"github-objc" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+        if (isFinished) {
+            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
+        }
+        
+    } onFailure:^(NSError *error) {
+        errorCode = error.code;
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
+        
+    }];
+    // Wait for block to finish or timeout, before doing assertions
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:60.0];
+    GHAssertTrue(errorCode == INVALID_PER_PAGE_INPUT, @"Setting the per_page to 0 should fail in the validations before executing the request");
 }
 
 -(void)testGetAllReposForEmptyUser {
@@ -60,7 +79,7 @@
 -(void)testGetAllReposForUserWithInvalidPassword {
     
     __block int errorCode = -1;
-    Credential *credential = [[Credential alloc] initWithUsername:@"user" andPassword:@"wrongPassword"];
+    Credential *credential = [[Credential alloc] initWithUsername:@"github-objc" andPassword:@"wrongPassword"];
     [self.api setCredential:credential];
     
     [self prepare];
