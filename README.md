@@ -29,4 +29,4 @@ TODO
 
 ## Copyright
 
-Copyright (c) 2012 Adriana Santos. See [LICENSE](https://github.com/adsantos/GithubWrapper/LICENSE) for details.
+Copyright (c) 2012 Adriana Santos. See [LICENSE](https://github.com/adsantos/GithubWrapper/blob/master/LICENSE) for details.
