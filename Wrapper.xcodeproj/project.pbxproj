@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2648B8742E244B71AAC50045 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09F93F440B241599CF301C9 /* libPods.a */; };
+		6D8EF22D1677FBE800690661 /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2221677FBE800690661 /* Credential.m */; };
+		6D8EF22E1677FBE800690661 /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2221677FBE800690661 /* Credential.m */; };
+		6D8EF22F1677FBE800690661 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2241677FBE800690661 /* NSString+Helper.m */; };
+		6D8EF2301677FBE800690661 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2241677FBE800690661 /* NSString+Helper.m */; };
+		6D8EF2311677FBE800690661 /* RestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2261677FBE800690661 /* RestAPI.m */; };
+		6D8EF2321677FBE800690661 /* RestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2261677FBE800690661 /* RestAPI.m */; };
+		6D8EF2331677FBE800690661 /* RestDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2281677FBE800690661 /* RestDefines.m */; };
+		6D8EF2341677FBE800690661 /* RestDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF2281677FBE800690661 /* RestDefines.m */; };
+		6D8EF2351677FBE800690661 /* RestHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF22A1677FBE800690661 /* RestHTTPClient.m */; };
+		6D8EF2361677FBE800690661 /* RestHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF22A1677FBE800690661 /* RestHTTPClient.m */; };
+		6D8EF2371677FBE800690661 /* WrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF22C1677FBE800690661 /* WrapperUtil.m */; };
+		6D8EF2381677FBE800690661 /* WrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8EF22C1677FBE800690661 /* WrapperUtil.m */; };
 		6DBE0ECE1675EAA100BE343A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0ECD1675EAA100BE343A /* UIKit.framework */; };
 		6DBE0ED01675EAA100BE343A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0ECF1675EAA100BE343A /* Foundation.framework */; };
 		6DBE0ED21675EAA100BE343A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0ED11675EAA100BE343A /* CoreGraphics.framework */; };
@@ -26,26 +38,26 @@
 		6DBE0F021675EB1800BE343A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE0F011675EB1800BE343A /* Default@2x.png */; };
 		6DBE0F041675EB1800BE343A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DBE0F031675EB1800BE343A /* Default-568h@2x.png */; };
 		6DBE0F0C1675EC3C00BE343A /* TestWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F0B1675EC3C00BE343A /* TestWrapper.m */; };
-		6DBE0F251675EDCB00BE343A /* RestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F201675EDCB00BE343A /* RestAPI.m */; };
-		6DBE0F261675EDCB00BE343A /* RestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F201675EDCB00BE343A /* RestAPI.m */; };
-		6DBE0F271675EDCB00BE343A /* RestDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F221675EDCB00BE343A /* RestDefines.m */; };
-		6DBE0F281675EDCB00BE343A /* RestDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F221675EDCB00BE343A /* RestDefines.m */; };
-		6DBE0F291675EDCB00BE343A /* RestHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F241675EDCB00BE343A /* RestHTTPClient.m */; };
-		6DBE0F2A1675EDCB00BE343A /* RestHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE0F241675EDCB00BE343A /* RestHTTPClient.m */; };
 		6DBE0F3E1675F30C00BE343A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0F3D1675F30C00BE343A /* GHUnitIOS.framework */; };
 		6DBE0FBB1676009B00BE343A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0FBA1676009B00BE343A /* libPods.a */; };
 		6DBE0FE81676038D00BE343A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0F411675F3D700BE343A /* SystemConfiguration.framework */; };
 		6DBE0FE91676039800BE343A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBE0F411675F3D700BE343A /* SystemConfiguration.framework */; };
-		6DBE1024167685FE00BE343A /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE1023167685FE00BE343A /* Credential.m */; };
-		6DBE1025167685FE00BE343A /* Credential.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE1023167685FE00BE343A /* Credential.m */; };
-		6DBE1028167749AB00BE343A /* WrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE1027167749AA00BE343A /* WrapperUtil.m */; };
-		6DBE1029167749AB00BE343A /* WrapperUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE1027167749AA00BE343A /* WrapperUtil.m */; };
-		6DBE102D16774ADB00BE343A /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE102C16774ADB00BE343A /* NSString+Helper.m */; };
-		6DBE102E16774ADB00BE343A /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBE102C16774ADB00BE343A /* NSString+Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31C3B027F4DA4C40A7AA940C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		6D8EF2211677FBE800690661 /* Credential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credential.h; sourceTree = "<group>"; };
+		6D8EF2221677FBE800690661 /* Credential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credential.m; sourceTree = "<group>"; };
+		6D8EF2231677FBE800690661 /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
+		6D8EF2241677FBE800690661 /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
+		6D8EF2251677FBE800690661 /* RestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPI.h; sourceTree = "<group>"; };
+		6D8EF2261677FBE800690661 /* RestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPI.m; sourceTree = "<group>"; };
+		6D8EF2271677FBE800690661 /* RestDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestDefines.h; sourceTree = "<group>"; };
+		6D8EF2281677FBE800690661 /* RestDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestDefines.m; sourceTree = "<group>"; };
+		6D8EF2291677FBE800690661 /* RestHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestHTTPClient.h; sourceTree = "<group>"; };
+		6D8EF22A1677FBE800690661 /* RestHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestHTTPClient.m; sourceTree = "<group>"; };
+		6D8EF22B1677FBE800690661 /* WrapperUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapperUtil.h; sourceTree = "<group>"; };
+		6D8EF22C1677FBE800690661 /* WrapperUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapperUtil.m; sourceTree = "<group>"; };
 		6DBE0EC91675EAA100BE343A /* Wrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBE0ECD1675EAA100BE343A /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DBE0ECF1675EAA100BE343A /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,21 +80,9 @@
 		6DBE0F011675EB1800BE343A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		6DBE0F031675EB1800BE343A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6DBE0F0B1675EC3C00BE343A /* TestWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestWrapper.m; sourceTree = "<group>"; };
-		6DBE0F1F1675EDCB00BE343A /* RestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPI.h; sourceTree = "<group>"; };
-		6DBE0F201675EDCB00BE343A /* RestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPI.m; sourceTree = "<group>"; };
-		6DBE0F211675EDCB00BE343A /* RestDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestDefines.h; sourceTree = "<group>"; };
-		6DBE0F221675EDCB00BE343A /* RestDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestDefines.m; sourceTree = "<group>"; };
-		6DBE0F231675EDCB00BE343A /* RestHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestHTTPClient.h; sourceTree = "<group>"; };
-		6DBE0F241675EDCB00BE343A /* RestHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestHTTPClient.m; sourceTree = "<group>"; };
 		6DBE0F3D1675F30C00BE343A /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = Tests/GHUnitIOS.framework; sourceTree = "<group>"; };
 		6DBE0F411675F3D700BE343A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6DBE0FBA1676009B00BE343A /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
-		6DBE1022167685FE00BE343A /* Credential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credential.h; sourceTree = "<group>"; };
-		6DBE1023167685FE00BE343A /* Credential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credential.m; sourceTree = "<group>"; };
-		6DBE1026167749AA00BE343A /* WrapperUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapperUtil.h; sourceTree = "<group>"; };
-		6DBE1027167749AA00BE343A /* WrapperUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapperUtil.m; sourceTree = "<group>"; };
-		6DBE102B16774ADB00BE343A /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Helper.h"; sourceTree = "<group>"; };
-		6DBE102C16774ADB00BE343A /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Helper.m"; sourceTree = "<group>"; };
 		B09F93F440B241599CF301C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +115,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D8EF2201677FBE800690661 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				6D8EF23B1677FC0800690661 /* REST */,
+				6D8EF23A1677FBF500690661 /* Categories */,
+				6D8EF2211677FBE800690661 /* Credential.h */,
+				6D8EF2221677FBE800690661 /* Credential.m */,
+				6D8EF22B1677FBE800690661 /* WrapperUtil.h */,
+				6D8EF22C1677FBE800690661 /* WrapperUtil.m */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		6D8EF23A1677FBF500690661 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6D8EF2231677FBE800690661 /* NSString+Helper.h */,
+				6D8EF2241677FBE800690661 /* NSString+Helper.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		6D8EF23B1677FC0800690661 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				6D8EF2251677FBE800690661 /* RestAPI.h */,
+				6D8EF2261677FBE800690661 /* RestAPI.m */,
+				6D8EF2271677FBE800690661 /* RestDefines.h */,
+				6D8EF2281677FBE800690661 /* RestDefines.m */,
+				6D8EF2291677FBE800690661 /* RestHTTPClient.h */,
+				6D8EF22A1677FBE800690661 /* RestHTTPClient.m */,
+			);
+			name = REST;
+			sourceTree = "<group>";
+		};
 		6DBE0EBE1675EAA100BE343A = {
 			isa = PBXGroup;
 			children = (
@@ -152,12 +187,7 @@
 		6DBE0ED31675EAA100BE343A /* Wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				6DBE102A16774AC100BE343A /* Categories */,
-				6DBE1022167685FE00BE343A /* Credential.h */,
-				6DBE1023167685FE00BE343A /* Credential.m */,
-				6DBE1026167749AA00BE343A /* WrapperUtil.h */,
-				6DBE1027167749AA00BE343A /* WrapperUtil.m */,
-				6DBE0F1D1675ED9F00BE343A /* REST */,
+				6D8EF2201677FBE800690661 /* Framework */,
 				6DBE0EDC1675EAA100BE343A /* AppDelegate.h */,
 				6DBE0EDD1675EAA100BE343A /* AppDelegate.m */,
 				6DBE0ED41675EAA100BE343A /* Supporting Files */,
@@ -200,28 +230,6 @@
 				6DBE0F031675EB1800BE343A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6DBE0F1D1675ED9F00BE343A /* REST */ = {
-			isa = PBXGroup;
-			children = (
-				6DBE0F1F1675EDCB00BE343A /* RestAPI.h */,
-				6DBE0F201675EDCB00BE343A /* RestAPI.m */,
-				6DBE0F211675EDCB00BE343A /* RestDefines.h */,
-				6DBE0F221675EDCB00BE343A /* RestDefines.m */,
-				6DBE0F231675EDCB00BE343A /* RestHTTPClient.h */,
-				6DBE0F241675EDCB00BE343A /* RestHTTPClient.m */,
-			);
-			name = REST;
-			sourceTree = "<group>";
-		};
-		6DBE102A16774AC100BE343A /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				6DBE102B16774ADB00BE343A /* NSString+Helper.h */,
-				6DBE102C16774ADB00BE343A /* NSString+Helper.m */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,12 +346,12 @@
 			files = (
 				6DBE0EDA1675EAA100BE343A /* main.m in Sources */,
 				6DBE0EDE1675EAA100BE343A /* AppDelegate.m in Sources */,
-				6DBE0F251675EDCB00BE343A /* RestAPI.m in Sources */,
-				6DBE0F271675EDCB00BE343A /* RestDefines.m in Sources */,
-				6DBE0F291675EDCB00BE343A /* RestHTTPClient.m in Sources */,
-				6DBE1024167685FE00BE343A /* Credential.m in Sources */,
-				6DBE1028167749AB00BE343A /* WrapperUtil.m in Sources */,
-				6DBE102D16774ADB00BE343A /* NSString+Helper.m in Sources */,
+				6D8EF22D1677FBE800690661 /* Credential.m in Sources */,
+				6D8EF22F1677FBE800690661 /* NSString+Helper.m in Sources */,
+				6D8EF2311677FBE800690661 /* RestAPI.m in Sources */,
+				6D8EF2331677FBE800690661 /* RestDefines.m in Sources */,
+				6D8EF2351677FBE800690661 /* RestHTTPClient.m in Sources */,
+				6D8EF2371677FBE800690661 /* WrapperUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,12 +361,12 @@
 			files = (
 				6DBE0EFA1675EB1800BE343A /* main.m in Sources */,
 				6DBE0F0C1675EC3C00BE343A /* TestWrapper.m in Sources */,
-				6DBE0F261675EDCB00BE343A /* RestAPI.m in Sources */,
-				6DBE0F281675EDCB00BE343A /* RestDefines.m in Sources */,
-				6DBE0F2A1675EDCB00BE343A /* RestHTTPClient.m in Sources */,
-				6DBE1025167685FE00BE343A /* Credential.m in Sources */,
-				6DBE1029167749AB00BE343A /* WrapperUtil.m in Sources */,
-				6DBE102E16774ADB00BE343A /* NSString+Helper.m in Sources */,
+				6D8EF22E1677FBE800690661 /* Credential.m in Sources */,
+				6D8EF2301677FBE800690661 /* NSString+Helper.m in Sources */,
+				6D8EF2321677FBE800690661 /* RestAPI.m in Sources */,
+				6D8EF2341677FBE800690661 /* RestDefines.m in Sources */,
+				6D8EF2361677FBE800690661 /* RestHTTPClient.m in Sources */,
+				6D8EF2381677FBE800690661 /* WrapperUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
