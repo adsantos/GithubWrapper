@@ -92,7 +92,7 @@
     }];
 }
 
--(void)getAllReposForUser:(NSString *)username onSuccess:(GetAllReposForUserSuccessBlock)success onFailure:(FailureBlock)failure {
+-(void)getAllReposForUser:(NSString *)username withReposPerPage:(NSInteger)reposPerPage onSuccess:(GetAllReposForUserSuccessBlock)success onFailure:(FailureBlock)failure {
     
     if ([username length] == 0) {
         if(failure) {
@@ -103,7 +103,17 @@
         return;
     }
     
-    [self fetchNextPageUntilLastWithURL:[searchReposForUser stringByReplacingOccurrencesOfString:@"{user}" withString:[username stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]] onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+    if (reposPerPage < 1 || reposPerPage > 100) {
+        if(failure) {
+            NSDictionary *userInfo = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObject:NSLocalizedString(@"The number of repositories per page has to be between 1 and 100", @"")] forKeys:[NSArray arrayWithObject:NSLocalizedDescriptionKey]];
+            NSError *error = [[NSError alloc] initWithDomain:ERROR_DOMAIN code:INVALID_PER_PAGE_INPUT userInfo:userInfo];
+            failure(error);
+        }
+        return;
+    }
+    
+    NSString *reposPerPageString = [NSString stringWithFormat:@"%d", reposPerPage];
+    [self fetchNextPageUntilLastWithURL:[[searchReposForUser stringByReplacingOccurrencesOfString:@"{user}" withString:[username stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]] stringByReplacingOccurrencesOfString:@"{per_page}" withString:reposPerPageString] onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
         if (success) {
             success(operation, response, isFinished);
         }

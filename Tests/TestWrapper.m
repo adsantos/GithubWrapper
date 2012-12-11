@@ -27,7 +27,7 @@
     
     __block int errorCode = -1;
     [self prepare];
-    [self.api getAllReposForUser:@"carvil" onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+    [self.api getAllReposForUser:@"carvil" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
         if (isFinished) {
             [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
         }
@@ -46,7 +46,7 @@
     
     __block int errorCode = -1;
     [self prepare];
-    [self.api getAllReposForUser:@"" onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+    [self.api getAllReposForUser:@"" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForEmptyUser)];
     } onFailure:^(NSError *error) {
         errorCode = error.code;
@@ -64,7 +64,7 @@
     [self.api setCredential:credential];
     
     [self prepare];
-    [self.api getAllReposForUser:@"carvil" onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+    [self.api getAllReposForUser:@"carvil" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
         if (isFinished) {
             [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUserWithInvalidPassword)];
         }

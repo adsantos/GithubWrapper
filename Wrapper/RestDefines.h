@@ -14,7 +14,8 @@ extern NSString * const ERROR_DOMAIN;
 extern NSString * const searchReposForUser;
 
 typedef enum {
-    EMPTY_INPUT
+    EMPTY_INPUT,
+    INVALID_PER_PAGE_INPUT
 } REST_ERRORS;
 
 @interface RestDefines : NSObject

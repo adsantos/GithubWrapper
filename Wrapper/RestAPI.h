@@ -14,6 +14,6 @@
 @property (nonatomic, strong) Credential *credential;
 
 -(RestAPI *)initWithCredential:(Credential *)credential;
--(void)getAllReposForUser:(NSString *)username onSuccess:(GetAllReposForUserSuccessBlock)success onFailure:(FailureBlock)failure;
+-(void)getAllReposForUser:(NSString *)username withReposPerPage:(NSInteger)reposPerPage onSuccess:(GetAllReposForUserSuccessBlock)success onFailure:(FailureBlock)failure;
 
 @end

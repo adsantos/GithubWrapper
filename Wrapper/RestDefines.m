@@ -12,6 +12,6 @@
 
 NSString * const BASE_URL_STRING = @"https://api.github.com";
 NSString * const ERROR_DOMAIN = @"com.me.githubWrapper";
-NSString * const searchReposForUser = @"/users/{user}/repos?per_page=10";
+NSString * const searchReposForUser = @"/users/{user}/repos?per_page={per_page}";
 
 @end
