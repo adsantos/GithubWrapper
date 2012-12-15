@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'An Objective-C Github Wrapper'
   s.author   = { 'adsantos' => 'adrianasucena@gmail.com' }
   s.homepage = 'https://github.com/adsantos/GithubWrapper'
-  s.source   = { :git => 'ssh://github.com:adsantos/GithubWrapper.git' }
+  s.source   = { :git => 'ssh://git@github.com:adsantos/GithubWrapper.git' }
   s.description = 'An Objective-C Github Wrapper.'
   s.platform = :ios
   s.source_files = 'Wrapper/Framework/**/*.{h,m}'
