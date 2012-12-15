@@ -13,8 +13,10 @@ In order to use this framework in another project, execute the following steps:
 
 1. Install [CocoaPods](http://cocoapods.org).
 2. In the home directory of your project, create a file called Podfile and add the following:
-    ```platform :ios
-    pod 'Wrapper', :git => "ssh:github.com:adsantos/GithubWrapper.git
+    ```
+    platform :ios
+
+    pod 'Wrapper', :git => "git://github.com/adsantos/GithubWrapper.git"
     ```
 
 3. Run pod install
