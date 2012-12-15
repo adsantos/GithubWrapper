@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name     = 'GithubWrapper'
+  s.name     = 'Wrapper'
   s.version  = '0.0.1'
   s.license  = 'MIT'
   s.summary  = 'An Objective-C Github Wrapper'
