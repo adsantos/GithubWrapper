@@ -16,7 +16,7 @@ In order to use this framework in another project, execute the following steps:
     ```
     platform :ios
 
-    pod 'Wrapper', :git => "git://github.com/adsantos/GithubWrapper.git"
+    pod 'GithubWrapper', :git => "git://github.com/adsantos/GithubWrapper.git"
     ```
 
 3. Run pod install
@@ -24,9 +24,21 @@ In order to use this framework in another project, execute the following steps:
 5. Run the Pods target
 6. Run your project target
 
-## Examples
+## Example
 
-TODO
+The [GithubStats](https://github.com/adsantos/GithubStats) project uses this framework.
+
+## Testing
+
+1. Run the Pods target.
+2. Run the GithubStatsTests target.
+
+## TODO
+
+1. Add more Github API end-points.
+2. Add mocks with OCMock.
+3. Add OAuth support.
+4. Improve error messages.
 
 ## Supported versions
 
