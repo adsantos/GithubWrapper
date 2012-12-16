@@ -34,11 +34,11 @@
         for (NSDictionary *repo in response) {
             NSString *name = [repo objectForKey:@"name"];
             [repoNames addObject:name];
-            if (isFinished) {
-                NSLog(@"response: %@", response);
-                totalRepos = [response count];
-                [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
-            }
+        }
+        if (isFinished) {
+            NSLog(@"response: %@", response);
+            totalRepos = [response count];
+            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
         }
         
     } onFailure:^(NSError *error) {
