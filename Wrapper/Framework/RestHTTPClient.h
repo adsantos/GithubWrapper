@@ -17,6 +17,6 @@
 @property (nonatomic, strong) Credential *credential;
 
 +(RestHTTPClient *)sharedInstance;
-
+-(id)mutableCopyWithZone:(NSZone *)_zone;
 
 @end

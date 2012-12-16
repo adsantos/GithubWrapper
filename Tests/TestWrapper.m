@@ -26,12 +26,21 @@
 -(void)testGetAllReposForUser {
     
     __block int errorCode = -1;
+    __block int totalRepos = 0;
+     NSMutableArray *repoNames = [[NSMutableArray alloc] initWithCapacity:3];
+    NSArray *expectedRepoNames = [[NSArray alloc] initWithObjects:@"gh-unit", @"JSONKit", @"test1", nil];
     [self prepare];
-    [self.api getAllReposForUser:@"github-objc" withReposPerPage:1 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
-        if (isFinished) {
-            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
+    [self.api getAllReposForUser:@"github-objc" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+        for (NSDictionary *repo in response) {
+            NSString *name = [repo objectForKey:@"name"];
+            [repoNames addObject:name];
+            if (isFinished) {
+                NSLog(@"response: %@", response);
+                totalRepos = [response count];
+                [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
+            }
         }
-     
+        
     } onFailure:^(NSError *error) {
         errorCode = error.code;
         [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
@@ -40,20 +49,22 @@
     // Wait for block to finish or timeout, before doing assertions
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:60.0];
     GHAssertTrue(errorCode == -1, @"The request should had succeeded, unless there was a network connection problem or the username/password was invalid.");
+    GHAssertTrue(totalRepos == 3, @"There should be 3 repos for the user github-objc");
+    GHAssertEqualObjects(repoNames, expectedRepoNames, @"The repo names don't match");
 }
 
 -(void)testGetAllReposForUserWithInvalidPerPage {
     
     __block int errorCode = -1;
     [self prepare];
-    [self.api getAllReposForUser:@"github-objc" withReposPerPage:10 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
+    [self.api getAllReposForUser:@"github-objc" withReposPerPage:-1 onSuccess:^(AFHTTPRequestOperation *operation, id response, BOOL isFinished) {
         if (isFinished) {
-            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
+            [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUserWithInvalidPerPage)];
         }
         
     } onFailure:^(NSError *error) {
         errorCode = error.code;
-        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUser)];
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetAllReposForUserWithInvalidPerPage)];
         
     }];
     // Wait for block to finish or timeout, before doing assertions
@@ -94,6 +105,37 @@
     }];
     
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:60.0];
+    GHAssertTrue(errorCode == NSURLErrorBadServerResponse, @"The password should be invalid");
+}
+
+-(void)testValidUsernameAndPassword {
+    __block int errorCode = -1;
+    [self prepare];
+    [self.api validUsername:@"github-objc" andPassword:@"passw0rd" onSuccess:^{
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValidUsernameAndPassword)];
+    } onFailure:^(NSError *error) {
+        errorCode = error.code;
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testValidUsernameAndPassword)];
+    }];
+    
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:30.0];
+    GHAssertTrue(errorCode == -1, @"The password should be valid");
+}
+
+-(void)testInvalidUsernameAndPassword {
+    __block int errorCode = -1;
+    Credential *credential = [[Credential alloc] initWithUsername:@"github-objc" andPassword:@"wrongPassword"];
+    [self.api setCredential:credential];
+    
+    [self prepare];
+    [self.api validUsername:@"github-objc" andPassword:@"wrongPassword" onSuccess:^{
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testInvalidUsernameAndPassword)];
+    } onFailure:^(NSError *error) {
+        errorCode = error.code;
+        [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testInvalidUsernameAndPassword)];
+    }];
+    
+    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:30.0];
     GHAssertTrue(errorCode == NSURLErrorBadServerResponse, @"The password should be invalid");
 }
 

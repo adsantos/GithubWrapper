@@ -36,6 +36,15 @@
     return sharedInstance;
 }
 
+-(id)mutableCopyWithZone:(NSZone *)_zone {
+    RestHTTPClient *client = [[RestHTTPClient allocWithZone: _zone] init];
+    client = [client initWithBaseURL:[self baseURL]];
+    [client setIsReachable:[self isReachable]];
+    [client setCredential:[self credential]];
+    
+    return client;
+}
+
 -(void)setCredential:(Credential *)credential {
     _credential = credential;
     [self setAuthorizationHeaderWithUsername:self.credential.username password:self.credential.password];

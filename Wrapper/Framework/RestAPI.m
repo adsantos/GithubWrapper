@@ -124,4 +124,28 @@
     }];
 }
 
+-(void)validUsername:(NSString *)username andPassword:(NSString *)password onSuccess:(Success)success onFailure:(FailureBlock)failure {
+    if(FALSE == [[RestHTTPClient sharedInstance] isReachable]) {
+        if(failure) {
+            NSDictionary *userInfo = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObject:NSLocalizedString(@"Failed to connect to the network", @"")] forKeys:[NSArray arrayWithObject:NSLocalizedDescriptionKey]];
+            NSError *error = [[NSError alloc] initWithDomain:ERROR_DOMAIN code:NSURLErrorNotConnectedToInternet userInfo:userInfo];
+            failure(error);
+        }
+        return;
+    }
+    
+    Credential *credential = [[Credential alloc] initWithUsername:username andPassword:password];
+    RestHTTPClient *client = [[RestHTTPClient sharedInstance] mutableCopy];
+    [client setCredential:credential];
+    [client getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id response) {
+        if (success) {
+            success();
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end

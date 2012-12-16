@@ -20,6 +20,7 @@ typedef enum {
 
 @interface RestDefines : NSObject
 
+typedef void (^Success)(void);
 typedef void (^RestHTTPClientSuccessBlock)(AFHTTPRequestOperation *operation, id response);
 typedef void (^GetAllReposForUserSuccessBlock)(AFHTTPRequestOperation *operation, id response, BOOL isFinished);
 typedef void (^FailureBlock)(NSError *);
