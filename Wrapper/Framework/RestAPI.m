@@ -125,6 +125,16 @@
 }
 
 -(void)validUsername:(NSString *)username andPassword:(NSString *)password onSuccess:(Success)success onFailure:(FailureBlock)failure {
+    
+    if ([username length] == 0 || [password length] == 0) {
+        if(failure) {
+            NSDictionary *userInfo = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObject:NSLocalizedString(@"The username and password cannot be blank", @"")] forKeys:[NSArray arrayWithObject:NSLocalizedDescriptionKey]];
+            NSError *error = [[NSError alloc] initWithDomain:ERROR_DOMAIN code:EMPTY_INPUT userInfo:userInfo];
+            failure(error);
+        }
+        return;
+    }
+    
     if(FALSE == [[RestHTTPClient sharedInstance] isReachable]) {
         if(failure) {
             NSDictionary *userInfo = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObject:NSLocalizedString(@"Failed to connect to the network", @"")] forKeys:[NSArray arrayWithObject:NSLocalizedDescriptionKey]];
