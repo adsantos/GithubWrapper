@@ -30,7 +30,7 @@ TODO
 
 ## Supported versions
 
-TODO
+iOS 5+
 
 ## Contributing
 
