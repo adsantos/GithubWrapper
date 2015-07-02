@@ -22,7 +22,7 @@
         sharedInstance = [[self alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL_STRING]];
         
         //AFNetworking will call the block with the status whenever the network connection changes
-        [sharedInstance setReachabilityStatusChangeBlock:^(NSInteger status) {
+        [sharedInstance setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             if (status == AFNetworkReachabilityStatusUnknown || status == AFNetworkReachabilityStatusNotReachable) {
                 [sharedInstance setIsReachable:FALSE];
             }
